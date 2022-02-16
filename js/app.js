@@ -58,8 +58,14 @@ document.getElementById('save-button').addEventListener("click",function(e){
         let saveInput = document.getElementById('save-input');
         let saveInputNumber = parseFloat(saveInput.value)
         let save = incomeValue * saveInputNumber /100
-        document.getElementById('saving-money').innerText=save;
-        
+       let totalSave =  document.getElementById('saving-money').innerText=save;
+       let balance = document.getElementById("ballance");
+       let ballanceNumber = parseFloat(balance.innerText);
+       let RemainingBalance = ballanceNumber - totalSave;
+       document.getElementById('remaining-balance').innerText= RemainingBalance;
+
+
+
    
 });
 
