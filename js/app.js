@@ -34,18 +34,33 @@ function calculateInputValue() {
   else{
     document.getElementById('negative-num-error').style.display='block';
   };
- // save money 
  
+
 };
 
+// event handler function 
 function eventHandler(button){
     document.getElementById(button).addEventListener("click", function (e) {
         calculateInputValue();
       });
+      
 };
+// call event handler function
 eventHandler("calc-button");
-eventHandler("save-button");
 
 
+document.getElementById('save-button').addEventListener("click",function(e){
+    
+        // save money 
+        
+        let income = document.getElementById("income-input");
+        let incomeValue = parseFloat(income.value);
+        let saveInput = document.getElementById('save-input');
+        let saveInputNumber = parseFloat(saveInput.value)
+        let save = incomeValue * saveInputNumber /100
+        document.getElementById('saving-money').innerText=save;
+        
+   
+});
 
 
