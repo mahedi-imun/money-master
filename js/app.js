@@ -1,3 +1,4 @@
+// income ans expenses total calculate function 
 function calculateInputValue() {
   // get income input value
   let income = document.getElementById("income-input");
@@ -34,18 +35,10 @@ function calculateInputValue() {
   else {
     document.getElementById("negative-num-error").style.display = "block";
   }
-}
+};
 
-// event handler function
-function eventHandler(button) {
-  document.getElementById(button).addEventListener("click", function (e) {
-    calculateInputValue();
-  });
-}
-// call event handler function
-eventHandler("calc-button");
-
-document.getElementById("save-button").addEventListener("click", function (e) {
+// save ballance function
+function saveBallance (){
   // save money
   let income = document.getElementById("income-input");
   let incomeValue = parseFloat(income.value);
@@ -75,4 +68,19 @@ document.getElementById("save-button").addEventListener("click", function (e) {
   else {
       document.getElementById('save-input-error').style.display="block"
   }
-});
+};
+
+// event handler function
+function eventHandler(button, executeButton) {
+  document.getElementById(button).addEventListener("click", function (e) {
+    if(executeButton == true){
+      calculateInputValue();
+    }
+    else{
+      saveBallance()
+    }
+  });
+}
+// call event handler function
+eventHandler("calc-button",true);
+eventHandler("save-button",false)
