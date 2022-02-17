@@ -81,6 +81,7 @@ function eventHandler(button, executeButton) {
     }
   });
 };
-// call event handler function
+// call event handler function for calc-button
 eventHandler("calc-button",true);
+// call event handler function for save-button
 eventHandler("save-button",false)
