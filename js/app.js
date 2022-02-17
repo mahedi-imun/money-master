@@ -13,7 +13,7 @@ function calculateInputValue() {
   let others = document.getElementById("others-input");
   let othersValue = parseInt(others.value);
   // negative number error handle
-  if (incomeValue > 0 && foodValue > 0 && rentValue > 0 && othersValue > 0) {
+  if (incomeValue >= 0 && foodValue >= 0 && rentValue >= 0 && othersValue >= 0) {
     // get Total Expenses money
     let expensesMoney = foodValue + rentValue + othersValue;
     //
