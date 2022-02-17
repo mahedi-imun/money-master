@@ -2,16 +2,16 @@
 function calculateInputValue() {
   // get income input value
   let income = document.getElementById("income-input");
-  let incomeValue = parseFloat(income.value);
+  let incomeValue = parseInt(income.value);
   // get food input value
   let food = document.getElementById("food-input");
-  let foodValue = parseFloat(food.value);
+  let foodValue = parseInt(food.value);
   // get rent input value
   let rent = document.getElementById("rent-input");
-  let rentValue = parseFloat(rent.value);
+  let rentValue = parseInt(rent.value);
   // get others input value
   let others = document.getElementById("others-input");
-  let othersValue = parseFloat(others.value);
+  let othersValue = parseInt(others.value);
   // negative number error handle
   if (incomeValue > 0 && foodValue > 0 && rentValue > 0 && othersValue > 0) {
     // get Total Expenses money
@@ -41,15 +41,15 @@ function calculateInputValue() {
 function saveBallance (){
   // save money
   let income = document.getElementById("income-input");
-  let incomeValue = parseFloat(income.value);
+  let incomeValue = parseInt(income.value);
   let balance = document.getElementById("ballance");
-  let ballanceNumber = parseFloat(balance.innerText);
+  let ballanceNumber = parseInt(balance.innerText);
   let saveInput = document.getElementById("save-input");
-  let saveInputNumber = parseFloat(saveInput.value);
+  let saveInputNumber = parseInt(saveInput.value);
   let save = (incomeValue * saveInputNumber) / 100;
   // check error 
   if (save >= 0) {
-    
+
    if( ballanceNumber > save){
     let totalSave = (document.getElementById("saving-money").innerText = save);
     let RemainingBalance = ballanceNumber - totalSave;
@@ -80,7 +80,7 @@ function eventHandler(button, executeButton) {
       saveBallance()
     }
   });
-}
+};
 // call event handler function
 eventHandler("calc-button",true);
 eventHandler("save-button",false)
