@@ -52,7 +52,7 @@ function saveBallance (){
 
    if( ballanceNumber > save){
     let totalSave = (document.getElementById("saving-money").innerText = save);
-    let RemainingBalance = ballanceNumber - totalSave;
+    let RemainingBalance = parseFloat(ballanceNumber - totalSave);
     document.getElementById("remaining-balance").innerText = RemainingBalance;
     // hide negative number error massage 
     document.getElementById('save-input-error').style.display="none"
